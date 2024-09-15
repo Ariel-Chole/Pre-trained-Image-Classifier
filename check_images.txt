@@ -1,0 +1,30 @@
+Questions regarding Uploaded Image Classification:
+
+1. Did the three model architectures classify the breed of dog in Dog_01.jpg to be the same breed? If not, report the differences in the classifications.
+
+Answer: No, the three model architectures didn't classify the breed of Dog_o1.jpg to the same breed. They can't classity the real breed of dog, which is a kind of american eskimo dog. 
+
+
+2. Did each of the three model architectures classify the breed of dog in Dog_01.jpg to be the same breed of dog as that model architecture classified Dog_02.jpg? If not, report the differences in the classifications.
+
+Answer: Yes, the three model architectures can't classify a real dogname for both dog images.
+For both question 1 and 2, I re-read the dognames.txt and re-check the pet-images. After that, I think if we provide the model a load of images (including horizontally flip images) for various dogs, the model might perform better than now and it can perfectly classify my dog uploaded image.
+
+
+3. Did the three model architectures correctly classify Animal_Name_01.jpg and Object_Name_01.jpg to not be dogs? If not, report the misclassifications.
+
+Answer: Yes, all three models can classify my Cat_01.jpg as a cat and classifier can show real type of cat. 
+For Chair_01.jpg, both vgg and resnet models can't match the real type(chair) of the object in the image.
+Alexnet knows the object in the image is a chair but classifer shows that is a folding chair. Actually, it's not a folding chair.
+
+
+4. Based upon your answers for questions 1. - 3. above, select the model architecture that you feel did the best at classifying the four uploaded images. Describe why you selected that model architecture as the best on uploaded image classification.
+
+Answer: I noticed that when I run my model for pet images, VGG architecture model is the best because it can classity dogs and notdogs with 100 %, and correct_breed with 93.33 % accuracy. 
+However, when I run my model for uploaded images, both vgg and resnet show:
+ "# Total Images 4 # Matches: 1 # NOT Matches: 3." -> it can only match the cat photo.
+ In the meantime, alexnet architecture shows:
+  "# Total Images 4 # Matches: 2 # NOT Matches: 2" -> it can correctly match Chair and Cat. (but shows the wrong chair type)
+
+Based on those results, I am a little confused in choosing the best model architecture for uploaded images.
+

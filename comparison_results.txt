@@ -1,0 +1,83 @@
+>>>Running python check_images.py --arch resnet:
+
+*** Results Summary for CNN Model Architecture RESNET ***
+Nnumber of total Images:  40
+Nunmber of Dog Images:  30
+Number of not-a-dog images:  10
+ 
+pct_correct_dogs : 100.0
+pct_correct_breed : 90.0
+pct_correct_notdogs : 90.0
+
+>>> Running python check_images.py --arch vgg
+
+*** Results Summary for CNN Model Architecture VGG ***
+Nnumber of total Images:  40
+Nunmber of Dog Images:  30
+Number of not-a-dog images:  10
+ 
+pct_correct_dogs : 100.0
+pct_correct_breed : 93.33333333333333
+pct_correct_notdogs : 100.0
+
+
+>>> Running python check_images.py --arch alexnet
+*** Results Summary for CNN Model Architecture ALEXNET ***
+Nnumber of total Images:  40
+Nunmber of Dog Images:  30
+Number of not-a-dog images:  10
+ 
+pct_correct_dogs : 100.0
+pct_correct_breed : 80.0
+pct_correct_notdogs : 100.0
+
+>>> After running run_models_batch.sh, I compared the results to the results of the check_images.py.
+I see no difference between them.
+
+>>> for uploaded images, check_images.py shows:
+ ->*** Results Summary for CNN Model Architecture ALEXNET ***
+Nnumber of total Images:   4
+Nunmber of Dog Images:   2
+Number of not-a-dog images:   2
+ 
+pct_correct_dogs : 100.0
+pct_correct_breed : 0.0
+pct_correct_notdogs : 100.0
+
+INCORRECT Dog Breed Assignment:
+Real:                        dog   Classifier:              samoyed, samoyede
+Real:                        dog   Classifier:              samoyed, samoyede
+
+-> alexnet model also shows "# Total Images 4 # Matches: 2 # NOT Matches: 2"
+
+->*** Results Summary for CNN Model Architecture RESNET ***
+Nnumber of total Images:   4
+Nunmber of Dog Images:   2
+Number of not-a-dog images:   2
+ 
+pct_correct_dogs : 100.0
+pct_correct_breed : 0.0
+pct_correct_notdogs : 100.0
+
+INCORRECT Dog Breed Assignment:
+Real:                        dog   Classifier:              samoyed, samoyede
+Real:                        dog   Classifier:              samoyed, samoyede
+
+And resnet model also shows -> # Total Images 4 # Matches: 1 # NOT Matches: 3
+
+->*** Results Summary for CNN Model Architecture VGG ***
+Nnumber of total Images:   4
+Nunmber of Dog Images:   2
+Number of not-a-dog images:   2
+ 
+pct_correct_dogs : 100.0
+pct_correct_breed : 0.0
+pct_correct_notdogs : 100.0
+
+INCORRECT Dog Breed Assignment:
+Real:                        dog   Classifier:              samoyed, samoyede
+Real:                        dog   Classifier:              samoyed, samoyede
+
+-> Vgg model also shows "# Total Images 4 # Matches: 1 # NOT Matches: 3"
+
+>>> Therefore, running check_images.py for four primary uploaded images classify and address the results in the same way of running run_models_batch_uploaded.sh.
